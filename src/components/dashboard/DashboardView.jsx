@@ -4,8 +4,8 @@ import { useUI } from '../../ui-context.jsx';
 import { Skeleton, ErrorBox, Gloss, Icons } from '../shared/ui.jsx';
 import { COLORS } from '../../config/colors.js';
 
-const LENS_KEYS = ['harita', 'zaman', 'kavram', 'silsile', 'kulliyat', 'rehber'];
-const ROMAN = { harita: 'II', zaman: 'III', kavram: 'IV', silsile: 'V', kulliyat: 'VI', rehber: 'VII' };
+const LENS_KEYS = ['harita', 'zaman', 'kavram', 'silsile', 'kulliyat', 'intertext', 'rehber'];
+const ROMAN = { harita: 'II', zaman: 'III', kavram: 'IV', silsile: 'V', kulliyat: 'VI', intertext: 'VII', rehber: 'VIII' };
 
 export default function DashboardView({ onNavigate }) {
   const { data, loading, error } = useAsyncData('data/stats.json');

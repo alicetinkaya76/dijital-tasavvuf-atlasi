@@ -92,13 +92,17 @@ Kavram lensindeki D3 kuvvet grafiğini besler. **24 düğüm · 42 kenar.**
 
 ## 5. `shared_vocab.json` — eserler-arası paylaşılan söz dağarı
 
-**105 kenar.** Eser↔eser benzerliğini, paylaşılan içerik-belirteçleri üzerinden ölçer (yaygın belirteçler belge-sıklığıyla aşağı ağırlıklanır). *Şu an arayüzde görselleştirilmiyor; ileri çalışma ve “Paylaşılan Kanon” şekli için saklı tutulmuştur.*
+**105 kenar.** Eser↔eser benzerliğini, paylaşılan içerik-belirteçleri üzerinden ölçer (yaygın belirteçler belge-sıklığıyla aşağı ağırlıklanır). **Lens VII — Metinler Arası**'nı besler.
 
 ```jsonc
 { "edges": [ { "s", "t", "w", "shared" } ] }
 ```
 
-`shared` — iki eser arasında ağırlıkça en belirleyici ortak terimler.
+- `s`, `t` — eser kimlikleri (corpus.json ile aynı).
+- `w` — kosinüs-türü benzerlik ağırlığı (0,04–0,44 aralığında).
+- `shared` — iki eser arasında paylaşılan **ayırt edici terim sayısı** (tam sayı; terim listesi değil). Arayüzde eserin **merkeziliği** = ona değen tüm kenar ağırlıklarının toplamıdır.
+
+> *İleri çalışma:* `shared` şu an yalnız sayıdır; paylaşılan terimlerin kendisini (lexeme listesi) üretmek pipeline'da per-eser terim vektörlerinin saklanmasını gerektirir — gelecekteki bir zenginleştirme adımıdır.
 
 ---
 

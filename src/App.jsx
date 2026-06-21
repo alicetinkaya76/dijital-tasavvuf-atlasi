@@ -10,7 +10,14 @@ const TimelineView = lazy(() => import('./components/timeline/TimelineView.jsx')
 const ConceptsView = lazy(() => import('./components/concepts/ConceptsView.jsx'));
 const SilsileView = lazy(() => import('./components/silsile/SilsileView.jsx'));
 const CorpusView = lazy(() => import('./components/corpus/CorpusView.jsx'));
+const IntertextView = lazy(() => import('./components/intertext/IntertextView.jsx'));
 const AIView = lazy(() => import('./components/ai/AIView.jsx'));
+
+// Academic credits. To anonymize for double-blind review, set CREDITS = [].
+const CREDITS = [
+  { name: 'Dr. Öğr. Üyesi Sami Bayrakcı', affil: 'Selçuk Üniversitesi · İlahiyat Fakültesi' },
+  { name: 'Dr. Öğr. Üyesi Ali Çetinkaya', affil: 'Selçuk Üniversitesi · Teknoloji Fakültesi, Bilgisayar Mühendisliği' },
+];
 
 const LENSES = [
   { key: 'pano', Comp: Dashboard, num: 'I' },
@@ -19,7 +26,8 @@ const LENSES = [
   { key: 'kavram', Comp: ConceptsView, num: 'IV', data: 'data/concepts.json' },
   { key: 'silsile', Comp: SilsileView, num: 'V', data: 'data/silsile.json' },
   { key: 'kulliyat', Comp: CorpusView, num: 'VI', data: 'data/corpus.json' },
-  { key: 'rehber', Comp: AIView, num: 'VII' },
+  { key: 'intertext', Comp: IntertextView, num: 'VII', data: 'data/shared_vocab.json' },
+  { key: 'rehber', Comp: AIView, num: 'VIII' },
 ];
 
 function readHash() {
@@ -116,8 +124,24 @@ function Footer() {
           <p>{t('coverage.note')}</p>
         </div>
         <div className="footer-col">
-          <h4>{t('footer.method')}</h4>
-          <p>{t('footer.blind')}</p>
+          {CREDITS.length ? (
+            <>
+              <h4>{t('footer.credits')}</h4>
+              <ul className="footer-credits">
+                {CREDITS.map((c) => (
+                  <li key={c.name}>
+                    <span className="cred-name">{c.name}</span>
+                    <span className="cred-affil">{c.affil}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <>
+              <h4>{t('footer.method')}</h4>
+              <p>{t('footer.blind')}</p>
+            </>
+          )}
         </div>
       </div>
       <div className="footer-bottom">{t('app.thesis')} · {t('app.thesisAr')}</div>

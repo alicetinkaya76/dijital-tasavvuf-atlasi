@@ -8,7 +8,7 @@ An interactive, multilingual research atlas of the classical Sufi textual tradit
 
 ---
 
-## Yedi lens · The seven lenses
+## Sekiz lens · The eight lenses
 
 | | Lens | İçerik |
 |---|---|---|
@@ -18,7 +18,8 @@ An interactive, multilingual research atlas of the classical Sufi textual tradit
 | IV | **Kavram Madenciliği** / Concept Mining | Dağılım çubukları · ortak-geçiş ağı (D3) · kavram×yüzyıl ısı haritası · nesiller arası akış |
 | V | **Silsile Ağı** / Transmission | Hoca–talebe ve metinsel etki ağı (D3) |
 | VI | **Külliyat Tarayıcı** / Corpus Browser | Sıralanabilir künye tablosu · TR/AR/FA toleranslı tam-metin arama (MiniSearch) |
-| VII | **AI Rehber** / AI Guide | 22 metne dayalı RAG sohbeti; manevî hüküm vermez |
+| VII | **Metinler Arası** / Intertextual Web | Eserler arası paylaşılan ayırt edici söz dağarı; yakınlık, dile göre kümelenme, merkezilik (D3) |
+| VIII | **AI Rehber** / AI Guide | 22 metne dayalı RAG sohbeti; manevî hüküm vermez |
 
 Her kavramın bir **zâhir / bâtın notu** vardır: ne sayıldığı ve sayımdan ne kaçtığı, bir kenar hâşiyesi (gloss) olarak gösterilir.
 
@@ -123,9 +124,13 @@ Eser düzeyindeki künyeler (Latin/Arapça/Farsça müellif ve eser adları, şe
 ### Bu atlası atıf · Citing this atlas
 
 ```
-[Yazar gizli / Author redacted]. (2025). Dijital Tasavvuf Atlası
+Bayrakcı, S., & Çetinkaya, A. (2025). Dijital Tasavvuf Atlası
 (Digital Atlas of Sufism) [Yazılım/Software]. https://doi.org/<Zenodo-DOI>
 ```
+
+**Hazırlayanlar:** Dr. Öğr. Üyesi Sami Bayrakcı (Selçuk Üniversitesi, İlahiyat Fakültesi) · Dr. Öğr. Üyesi Ali Çetinkaya (Selçuk Üniversitesi, Teknoloji Fakültesi — Bilgisayar Mühendisliği Bölümü).
+
+> **Çift-kör hakemlik notu:** Hakem sürecine anonim bir sürüm sunulacaksa yazar bilgisini gizlemek için (1) `src/App.jsx` içindeki `CREDITS` dizisini `[]` yapın, (2) bu bölümdeki isimleri çıkarın. Footer otomatik olarak çift-kör notuna döner.
 
 ---
 
@@ -140,9 +145,9 @@ src/
   utils/normalize.js      TR+AR+FA katlama, tokenleştirme, rakam biçimleme
   config/                 colors.js (tezhip paleti) · ai.js
   components/
-    dashboard/ mapview/ timeline/ concepts/ silsile/ corpus/ ai/ shared/
+    dashboard/ mapview/ timeline/ concepts/ silsile/ corpus/ intertext/ ai/ shared/
   styles/                 base · shell · lenses · rtl
-public/data/              corpus · concepts · chunks · *_network · stats
+public/data/              corpus · concepts · chunks · *_network · shared_vocab · silsile · stats
 scripts/                  Python veri hattı
 ```
 

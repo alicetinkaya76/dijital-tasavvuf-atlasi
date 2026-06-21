@@ -80,6 +80,13 @@ export const Icons = {
       <path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01" />
     </svg>
   ),
+  intertext: (p) => (
+    <svg viewBox="0 0 24 24" className={p?.className} {...stroke}>
+      <circle cx="8.5" cy="12" r="5" />
+      <circle cx="15.5" cy="12" r="5" />
+      <circle cx="5" cy="5" r="1.4" /><circle cx="19" cy="5" r="1.4" /><circle cx="19" cy="19" r="1.4" /><circle cx="5" cy="19" r="1.4" />
+    </svg>
+  ),
   search: (p) => (
     <svg viewBox="0 0 24 24" className={p?.className} {...stroke}>
       <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />

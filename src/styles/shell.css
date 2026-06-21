@@ -167,3 +167,9 @@
   .app-nav { padding: 0 var(--sp-4) var(--sp-2); }
   .lang-btn[lang='ar'], .lang-btn[lang='fa'] { display: none; } /* keep tr/en on tiny screens */
 }
+
+/* footer author colophon */
+.footer-credits { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-2); }
+.footer-credits li { display: flex; flex-direction: column; line-height: 1.35; }
+.cred-name { font-weight: 600; color: var(--paper2); font-size: var(--fs-sm); }
+.cred-affil { font-size: var(--fs-xs); color: var(--muted-2); }

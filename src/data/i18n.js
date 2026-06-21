@@ -29,6 +29,7 @@ export const T = {
       kavram: 'Kavram Madenciliği',
       silsile: 'Silsile Ağı',
       kulliyat: 'Külliyat Tarayıcı',
+      intertext: 'Metinler Arası',
       rehber: 'AI Rehber',
     },
     lensDesc: {
@@ -38,6 +39,7 @@ export const T = {
       kavram: 'Kavram dağılımı, ortak-geçiş ağı, yüzyıllar arası akış',
       silsile: 'Müellifleri bağlayan hoca-talebe ve metinsel etki ağı',
       kulliyat: 'Sıralanabilir künye tablosu ve tam-metin arama',
+      intertext: 'Eserler arası paylaşılan söz dağarı: yakınlık, kümelenme, merkezilik',
       rehber: 'Yalnız 22 metne dayalı sohbet — manevî hüküm vermez',
     },
     common: {
@@ -133,6 +135,19 @@ export const T = {
       },
       curated: 'Bu çizge kürasyonludur: biyografik kaynaklardan ve metinsel etkiden derlenmiştir; tam isnad zincirlerini değil, başlıca bağları gösterir.',
     },
+    intertext: {
+      title: 'Metinler arası ağ — paylaşılan söz dağarı',
+      intro: 'Her düğüm bir eser; her bağ, iki eserin paylaştığı ayırt edici söz dağarının ağırlığıdır. Yaygın kelimeler belge-sıklığıyla aşağı ağırlıklanır, böylece bağlar türsel klişeyi değil belirgin örtüşmeyi yansıtır.',
+      threshold: 'En düşük benzerlik',
+      affinities: 'En yakın metinler',
+      sharedTerms: 'ortak ayırt edici terim',
+      similarity: 'benzerlik',
+      centrality: 'metinler arası merkezilik',
+      isolated: 'Bu eser eşikte başka esere bağlanmıyor (en yakın komşusu eşiğin altında).',
+      selectHint: 'Yakınlıklarını görmek için bir esere dokunun',
+      sizeNote: 'Düğüm boyutu = merkezilik · renk = dil',
+      note: 'Sözcüksel örtüşme bir yakınlık ipucudur, kanıt değil: iki eser çoğu zaman aynı tür ve dilde yazıldıkları için söz dağarı paylaşır; bu, birinin diğerini okuduğunu ya da aynı mânayı taşıdığını göstermez. Ağ, etkiyi değil ölçülebilir örtüşmeyi haritalar.',
+    },
     corpus: {
       title: 'Külliyat tarayıcı',
       colAuthor: 'Müellif',
@@ -180,6 +195,8 @@ export const T = {
         '“Dijital Beşerî Bilimler ve Tasavvuf Araştırmaları” makalesinin uygulama denemesi. Mimari olarak islamicatlas.org’u örnek alır.',
       method: 'Yöntem',
       blind: 'Çift-kör hakemlik: yazar/kurum bilgisi kabul sonrası açılır.',
+      credits: 'Hazırlayanlar',
+      colophon: 'Künye',
     },
   },
 
@@ -201,6 +218,7 @@ export const T = {
       kavram: 'Concept Mining',
       silsile: 'Transmission',
       kulliyat: 'Corpus Browser',
+      intertext: 'Intertextual Web',
       rehber: 'AI Guide',
     },
     lensDesc: {
@@ -210,6 +228,7 @@ export const T = {
       kavram: 'Concept distribution, co-occurrence network, flow across centuries',
       silsile: 'Teacher–student and textual-influence network among authors',
       kulliyat: 'Sortable bibliographic table and full-text search',
+      intertext: 'Shared vocabulary between works: affinity, clustering, centrality',
       rehber: 'Chat grounded only in the 22 texts — it issues no spiritual ruling',
     },
     common: {
@@ -300,6 +319,19 @@ export const T = {
       },
       curated: 'This graph is curated: drawn from biographical sources and textual influence, it shows principal links rather than complete isnād chains.',
     },
+    intertext: {
+      title: 'Intertextual web — shared vocabulary',
+      intro: 'Each node is a work; each link is the weight of the distinctive vocabulary two works share. Ubiquitous terms are down-weighted by document frequency, so the links reflect marked overlap rather than generic register.',
+      threshold: 'Minimum similarity',
+      affinities: 'Strongest affinities',
+      sharedTerms: 'shared distinctive terms',
+      similarity: 'similarity',
+      centrality: 'intertextual centrality',
+      isolated: 'This work has no link above the threshold (its nearest neighbour falls below it).',
+      selectHint: 'Tap a work to see its affinities',
+      sizeNote: 'Node size = centrality · colour = language',
+      note: 'Lexical overlap is a clue to proximity, not proof: two works often share vocabulary simply because they belong to the same genre and language — it does not show that one read the other or that they carry the same meaning. The web maps measurable overlap, not influence.',
+    },
     corpus: {
       title: 'Corpus browser',
       colAuthor: 'Author',
@@ -347,6 +379,8 @@ export const T = {
         'The application experiment for the article “Digital Humanities and Sufism Studies.” Architecturally modelled on islamicatlas.org.',
       method: 'Method',
       blind: 'Double-blind review: author/institution details open after acceptance.',
+      credits: 'Authors',
+      colophon: 'Colophon',
     },
   },
 
@@ -368,6 +402,7 @@ export const T = {
       kavram: 'تنقيب المفاهيم',
       silsile: 'شبكة السلسلة',
       kulliyat: 'متصفّح المدوّنة',
+      intertext: 'الشبكة النصّية',
       rehber: 'المرشد الذكيّ',
     },
     lensDesc: {
@@ -377,6 +412,7 @@ export const T = {
       kavram: 'توزّع المفاهيم، شبكة التوارد، التدفّق عبر القرون',
       silsile: 'شبكة الأستاذ والتلميذ والتأثير النصّيّ بين المؤلّفين',
       kulliyat: 'جدول ببليوغرافيّ قابل للفرز وبحث في النصّ الكامل',
+      intertext: 'المفردات المشتركة بين المؤلَّفات: التقارب والتجمّع والمركزيّة',
       rehber: 'حوار يستند إلى النصوص الاثنين والعشرين فحسب — لا يُصدر حكمًا روحيًّا',
     },
     common: {
@@ -467,6 +503,19 @@ export const T = {
       },
       curated: 'هذه الشبكة منتقاة: مستمدّة من المصادر الترجَميّة والتأثير النصّيّ، تُظهر الصلات الرئيسة لا سلاسل الإسناد الكاملة.',
     },
+    intertext: {
+      title: 'الشبكة النصّيّة — المفردات المشتركة',
+      intro: 'كلّ عقدة مصنَّف، وكلّ صلة هي وزن المفردات المميِّزة التي يتشاركها مصنَّفان. خُفِّض وزن الألفاظ الشائعة بحسب تواترها في الوثائق، فتعكس الصلات تشابهًا ملحوظًا لا سمةً نوعيّة عامّة.',
+      threshold: 'أدنى تشابه',
+      affinities: 'أقرب النصوص',
+      sharedTerms: 'لفظة مميِّزة مشتركة',
+      similarity: 'التشابه',
+      centrality: 'المركزيّة النصّيّة',
+      isolated: 'لا صلة لهذا المصنَّف فوق العتبة (أقرب جيرانه دونها).',
+      selectHint: 'انقر على مصنَّف لرؤية قراباته',
+      sizeNote: 'حجم العقدة = المركزيّة · اللون = اللغة',
+      note: 'التشابه اللفظيّ قرينة على القرب لا برهان: كثيرًا ما يتشارك مصنَّفان المفردات لمجرّد انتمائهما إلى الجنس واللغة نفسيهما، ولا يدلّ ذلك على أنّ أحدهما قرأ الآخر أو أنّهما يحملان المعنى نفسه. الشبكة تُخرِط التشابه القابل للقياس لا التأثير.',
+    },
     corpus: {
       title: 'متصفّح المدوّنة',
       colAuthor: 'المؤلّف',
@@ -514,6 +563,8 @@ export const T = {
         'التجربة التطبيقيّة لمقالة «العلوم الإنسانيّة الرقميّة ودراسات التصوّف». مبنيّ معماريًّا على نمط islamicatlas.org.',
       method: 'المنهج',
       blind: 'تحكيم مزدوج التعمية: تُفتح بيانات المؤلّف/المؤسّسة بعد القبول.',
+      credits: 'المُعِدّان',
+      colophon: 'بطاقة العمل',
     },
   },
 
@@ -535,6 +586,7 @@ export const T = {
       kavram: 'کاوش مفاهیم',
       silsile: 'شبکهٔ سلسله',
       kulliyat: 'مرورگر پیکره',
+      intertext: 'شبکهٔ بینامتنی',
       rehber: 'راهنمای هوش مصنوعی',
     },
     lensDesc: {
@@ -544,6 +596,7 @@ export const T = {
       kavram: 'توزیع مفاهیم، شبکهٔ هم‌آیی و جریان در گذر سده‌ها',
       silsile: 'شبکهٔ استاد–شاگرد و تأثیر متنی میان مؤلّفان',
       kulliyat: 'جدول کتاب‌شناختی مرتّب‌شدنی و جستجوی تمام‌متن',
+      intertext: 'واژگان مشترک میان آثار: نزدیکی، خوشه‌بندی، مرکزیت',
       rehber: 'گفت‌وگوی متّکی تنها بر ۲۲ متن — حکم معنوی صادر نمی‌کند',
     },
     common: {
@@ -634,6 +687,19 @@ export const T = {
       },
       curated: 'این گراف گزیده است: برگرفته از منابع شرح‌حالی و تأثیر متنی، پیوندهای اصلی را نشان می‌دهد نه زنجیره‌های کامل اسناد را.',
     },
+    intertext: {
+      title: 'شبکهٔ بینامتنی — واژگان مشترک',
+      intro: 'هر گره یک اثر است و هر پیوند، وزن واژگان متمایزی است که دو اثر در آن سهیم‌اند. واژه‌های پربسامد بر پایهٔ بسامد سندی کم‌وزن شده‌اند تا پیوندها هم‌پوشانی نشان‌دار را بازتاب دهند نه ویژگی نوعی عام را.',
+      threshold: 'کمینهٔ شباهت',
+      affinities: 'نزدیک‌ترین متن‌ها',
+      sharedTerms: 'واژهٔ متمایز مشترک',
+      similarity: 'شباهت',
+      centrality: 'مرکزیت بینامتنی',
+      isolated: 'این اثر بالای آستانه پیوندی ندارد (نزدیک‌ترین همسایه‌اش زیر آستانه است).',
+      selectHint: 'برای دیدن نزدیکی‌ها روی یک اثر بزنید',
+      sizeNote: 'اندازهٔ گره = مرکزیت · رنگ = زبان',
+      note: 'هم‌پوشانی واژگانی قرینهٔ نزدیکی است نه برهان: دو اثر اغلب تنها به‌سبب تعلّق به یک گونه و زبان واژگان مشترک دارند و این نشان نمی‌دهد که یکی دیگری را خوانده یا هر دو یک معنا را حمل می‌کنند. شبکه هم‌پوشانی سنجش‌پذیر را نقشه می‌کند نه تأثیر را.',
+    },
     corpus: {
       title: 'مرورگر پیکره',
       colAuthor: 'مؤلّف',
@@ -681,6 +747,8 @@ export const T = {
         'تجربهٔ کاربردی مقالهٔ «علوم انسانی دیجیتال و مطالعات تصوّف». از نظر معماری بر الگوی islamicatlas.org ساخته شده است.',
       method: 'روش',
       blind: 'داوری دوسوکور: اطّلاعات مؤلّف/نهاد پس از پذیرش گشوده می‌شود.',
+      credits: 'پدیدآورندگان',
+      colophon: 'شناسنامه',
     },
   },
 };

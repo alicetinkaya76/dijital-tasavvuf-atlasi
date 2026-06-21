@@ -1,0 +1,57 @@
+/* ════════════════════════════════════════════════════════════════════
+   RTL — Arabic & Persian. The layout uses CSS logical properties
+   (inset-inline-*, padding-inline-*, border-inline-*) throughout, so most
+   mirroring is automatic under dir="rtl". This file handles fonts and the
+   typographic details that differ for Perso-Arabic script.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* UI chrome needs an Arabic-capable face. Vazirmatn covers Arabic + Persian
+   + Latin with tabular figures, so use it for all UI in RTL locales. */
+html[lang='ar'],
+html[lang='fa'] {
+  --font-ui: 'Vazirmatn', system-ui, sans-serif;
+}
+html[lang='ar'] {
+  --font-display: 'Amiri', serif; /* Naskh display for Arabic */
+}
+html[lang='fa'] {
+  --font-display: 'Vazirmatn', 'Amiri', sans-serif;
+}
+
+/* Letter-spacing breaks Perso-Arabic cursive joining — neutralize it. */
+html[dir='rtl'] * {
+  letter-spacing: normal !important;
+}
+
+/* Uppercase eyebrows: leave the colour/weight cue, drop the transform
+   (Arabic has no case) and keep them legible. */
+html[dir='rtl'] .section-eyebrow,
+html[dir='rtl'] .cx-family-label,
+html[dir='rtl'] .zb-label,
+html[dir='rtl'] .gloss::before,
+html[dir='rtl'] .footer-col h4 {
+  text-transform: none;
+}
+
+/* The reading body wants the serif voice in LTR, but for RTL the original
+   script faces carry it. */
+html[dir='rtl'] .hero-intro,
+html[dir='rtl'] .gloss,
+html[dir='rtl'] .sl-conn-note,
+html[dir='rtl'] .cn-hint {
+  font-style: normal;
+}
+
+/* Original-script passages already set dir="rtl" inline; ensure alignment. */
+html[dir='rtl'] .lens-sub,
+html[dir='rtl'] .section-hint { text-align: start; }
+
+/* Leaflet attribution + zoom sit better flipped in RTL */
+html[dir='rtl'] .leaflet-control-container .leaflet-top.leaflet-left { left: auto; right: 0; }
+html[dir='rtl'] .leaflet-control-attribution { direction: ltr; text-align: left; }
+
+/* Numbers stay LTR even inside RTL text runs */
+.num { unicode-bidi: plaintext; }
+
+/* search snippet / samples are RTL regardless of UI language */
+.result-snippet, .sample-text, .ai-source-snippet, .cx-variants { unicode-bidi: plaintext; }

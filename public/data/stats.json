@@ -1,0 +1,23 @@
+{
+  "works": 22,
+  "total_words": 4992778,
+  "authors": 16,
+  "cities": 10,
+  "langs": {
+    "ara": 17,
+    "per": 5
+  },
+  "ah_min": 243,
+  "ah_max": 672,
+  "ce_min": 858,
+  "ce_max": 1274,
+  "concepts": 24,
+  "chunks": 1807,
+  "by_century_ah": {
+    "3": 4,
+    "4": 4,
+    "5": 8,
+    "6": 1,
+    "7": 5
+  }
+}

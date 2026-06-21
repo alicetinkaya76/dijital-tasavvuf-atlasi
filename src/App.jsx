@@ -12,6 +12,7 @@ const SilsileView = lazy(() => import('./components/silsile/SilsileView.jsx'));
 const CorpusView = lazy(() => import('./components/corpus/CorpusView.jsx'));
 const IntertextView = lazy(() => import('./components/intertext/IntertextView.jsx'));
 const AIView = lazy(() => import('./components/ai/AIView.jsx'));
+const MethodView = lazy(() => import('./components/method/MethodView.jsx'));
 
 // Academic credits. To anonymize for double-blind review, set CREDITS = [].
 const CREDITS = [
@@ -32,6 +33,7 @@ const LENSES = [
 
 function readHash() {
   const h = (window.location.hash || '').replace(/^#\/?/, '');
+  if (h === 'yontem') return 'yontem';
   return LENSES.some((l) => l.key === h) ? h : 'pano';
 }
 
@@ -40,7 +42,7 @@ export default function App() {
   const [active, setActive] = useState(readHash);
 
   useEffect(() => {
-    const onHash = () => setActive(readHash());
+    const onHash = () => { setActive(readHash()); window.scrollTo({ top: 0, behavior: 'smooth' }); };
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
@@ -60,7 +62,8 @@ export default function App() {
   }, []);
 
   const current = LENSES.find((l) => l.key === active) || LENSES[0];
-  const Current = current.Comp;
+  const isMethod = active === 'yontem';
+  const Current = isMethod ? MethodView : current.Comp;
 
   return (
     <div className="app" dir={dir}>
@@ -73,7 +76,12 @@ export default function App() {
               <span className="brand-thesis">{t('app.thesis')}</span>
             </span>
           </button>
-          <LanguageBar />
+          <div className="header-right">
+            <a className="header-method" href="#/yontem" aria-current={isMethod ? 'page' : undefined}>
+              {t('method.title')}
+            </a>
+            <LanguageBar />
+          </div>
         </div>
         <nav className="app-nav" aria-label="lenses">
           {LENSES.map((l) => {
@@ -144,7 +152,10 @@ function Footer() {
           )}
         </div>
       </div>
-      <div className="footer-bottom">{t('app.thesis')} · {t('app.thesisAr')}</div>
+      <div className="footer-bottom">
+        <a className="footer-method-link" href="#/yontem">{t('method.title')} →</a>
+        <span className="footer-motto">{t('app.thesis')} · {t('app.thesisAr')}</span>
+      </div>
     </footer>
   );
 }

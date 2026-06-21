@@ -441,3 +441,34 @@ tr { cursor: pointer; }
 .dendro-leaf text { transition: fill 0.12s; }
 .dendro-leaf:hover text { fill: var(--gold); }
 .dendro-leaf:hover circle { r: 5; }
+
+/* ════════ method & limits page (Round 3) ════════ */
+.method-page { max-width: 768px; margin: 0 auto; }
+.method-hero { position: relative; padding: var(--sp-6) var(--sp-6) var(--sp-5); overflow: hidden; }
+.method-ornament { position: absolute; inset-inline-end: -22px; top: -22px; width: 150px; height: 150px; opacity: 0.6; pointer-events: none; }
+.method-hero .section-eyebrow { position: relative; }
+.method-lead {
+  position: relative; font-family: var(--font-serif); font-size: 1.32rem; line-height: 1.66;
+  color: var(--ink); margin: var(--sp-3) 0 0; max-width: 54ch; font-weight: 500;
+}
+.method-body { margin-top: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-6); }
+.method-section { display: grid; grid-template-columns: 1fr; gap: var(--sp-2); }
+.method-sec-head { display: flex; align-items: baseline; gap: var(--sp-3); border-bottom: 1px solid var(--line); padding-bottom: var(--sp-2); }
+.method-sec-num { font-family: var(--font-display); font-size: 1.5rem; color: var(--gold); font-weight: 700; line-height: 1; }
+.method-sec-title { margin: 0; font-size: 1.18rem; }
+.method-sec-body { padding-top: var(--sp-1); }
+.method-sec-body p { font-family: var(--font-serif); font-size: 1.04rem; line-height: 1.72; color: var(--ink-soft); margin: 0 0 var(--sp-3); max-width: 64ch; }
+.method-sec-body p:last-child { margin-bottom: 0; }
+.method-nets { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-3); }
+.method-nets li { position: relative; padding-inline-start: var(--sp-4); }
+.method-nets li::before { content: ''; position: absolute; inset-inline-start: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 2px; background: var(--gold); }
+.method-nets li.net-curated::before { background: var(--sepia); }
+.net-tag { font-family: var(--font-serif); font-size: 1.04rem; line-height: 1.7; color: var(--ink-soft); }
+.method-batin { margin-top: var(--sp-4); }
+.method-closing { text-align: center; font-family: var(--font-display); font-size: 1.5rem; color: var(--madder); margin: var(--sp-7) 0 var(--sp-4); position: relative; }
+.method-closing-rule { display: block; width: 54px; height: 2px; margin: 0 auto var(--sp-4); background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+@media (max-width: 560px) {
+  .method-lead { font-size: 1.16rem; }
+  .method-ornament { width: 100px; height: 100px; }
+}

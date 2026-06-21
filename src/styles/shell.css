@@ -173,3 +173,14 @@
 .footer-credits li { display: flex; flex-direction: column; line-height: 1.35; }
 .cred-name { font-weight: 600; color: var(--paper2); font-size: var(--fs-sm); }
 .cred-affil { font-size: var(--fs-xs); color: var(--muted-2); }
+
+/* header method link + footer method link (Round 3) */
+.header-right { display: flex; align-items: center; gap: var(--sp-3); }
+.header-method { font-size: var(--fs-sm); font-weight: 600; color: var(--muted); text-decoration: none; white-space: nowrap; padding: 0.3em 0.2em; border-bottom: 1.5px solid transparent; transition: color 0.15s, border-color 0.15s; }
+.header-method:hover { color: var(--gold); }
+.header-method[aria-current='page'] { color: var(--gold); border-color: var(--gold); }
+.footer-bottom { display: flex; align-items: center; justify-content: center; gap: var(--sp-3); flex-wrap: wrap; }
+.footer-method-link { color: var(--gold-soft); text-decoration: none; font-weight: 600; }
+.footer-method-link:hover { color: var(--gold); }
+.footer-motto { color: var(--muted-2); }
+@media (max-width: 640px) { .header-method { display: none; } }

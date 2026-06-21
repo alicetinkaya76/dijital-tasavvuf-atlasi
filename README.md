@@ -145,7 +145,7 @@ src/
   utils/normalize.js      TR+AR+FA katlama, tokenleştirme, rakam biçimleme
   config/                 colors.js (tezhip paleti) · ai.js
   components/
-    dashboard/ mapview/ timeline/ concepts/ silsile/ corpus/ intertext/ ai/ shared/
+    dashboard/ mapview/ timeline/ concepts/ silsile/ corpus/ intertext/ ai/ method/ shared/
   styles/                 base · shell · lenses · rtl
 public/data/              corpus · concepts · chunks · *_network · shared_vocab · silsile · stats
 scripts/                  Python veri hattı

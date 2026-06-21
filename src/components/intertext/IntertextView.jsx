@@ -4,6 +4,7 @@ import useAsyncData from '../../hooks/useAsyncData.jsx';
 import { useUI } from '../../ui-context.jsx';
 import { Skeleton, ErrorBox, ScriptName, LangBadge, Gloss } from '../shared/ui.jsx';
 import { COLORS, langColor } from '../../config/colors.js';
+import Dendrogram from './Dendrogram.jsx';
 
 const MIN_T = 0.04;
 const MAX_T = 0.45;
@@ -17,6 +18,7 @@ export default function IntertextView() {
   const posRef = useRef({}); // preserve node positions across re-sims
   const [size, setSize] = useState({ w: 760, h: 560 });
   const [threshold, setThreshold] = useState(0.1);
+  const [view, setView] = useState('graph');
   const [selected, setSelected] = useState(null);
 
   const works = corpusRes.data;
@@ -65,7 +67,7 @@ export default function IntertextView() {
   }, []);
 
   useEffect(() => {
-    if (!works || !edgesAll || !svgRef.current) return;
+    if (view !== 'graph' || !works || !edgesAll || !svgRef.current) return;
     const { w, h } = size;
     const nodes = works.map((d) => {
       const p = posRef.current[d.id];
@@ -133,7 +135,7 @@ export default function IntertextView() {
         .on('end', (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; });
     }
     return () => sim.stop();
-  }, [works, edgesAll, size, threshold, centrality, maxCentrality, lang]);
+  }, [works, edgesAll, size, threshold, centrality, maxCentrality, lang, view]);
 
   // highlight selection + its links
   useEffect(() => {
@@ -171,21 +173,31 @@ export default function IntertextView() {
       <div className="it-layout">
         <div className="it-graph-wrap framed" ref={wrapRef}>
           <div className="it-toolbar">
-            <label className="it-threshold">
-              <span className="control-label">{t('intertext.threshold')}</span>
-              <input
-                type="range" min={MIN_T} max={MAX_T} step={0.05} value={threshold}
-                onChange={(e) => setThreshold(parseFloat(e.target.value))}
-              />
-              <span className="it-threshold-val num">{threshold.toFixed(2)}</span>
-            </label>
+            <div className="mode-toggle it-viewtoggle">
+              <button className={`mode-btn ${view === 'graph' ? 'active' : ''}`} onClick={() => setView('graph')}>{t('intertext.viewGraph')}</button>
+              <button className={`mode-btn ${view === 'tree' ? 'active' : ''}`} onClick={() => setView('tree')}>{t('intertext.viewTree')}</button>
+            </div>
+            {view === 'graph' && (
+              <label className="it-threshold">
+                <span className="control-label">{t('intertext.threshold')}</span>
+                <input
+                  type="range" min={MIN_T} max={MAX_T} step={0.05} value={threshold}
+                  onChange={(e) => setThreshold(parseFloat(e.target.value))}
+                />
+                <span className="it-threshold-val num">{threshold.toFixed(2)}</span>
+              </label>
+            )}
             <div className="it-legend">
               <span className="legend-item"><span className="legend-dot" style={{ background: COLORS.sepia }} />{t('pano.langAra')}</span>
               <span className="legend-item"><span className="legend-dot" style={{ background: COLORS.lapis }} />{t('pano.langPer')}</span>
-              <span className="legend-note muted">{t('intertext.sizeNote')}</span>
+              <span className="legend-note muted">{view === 'graph' ? t('intertext.sizeNote') : t('intertext.treeHint')}</span>
             </div>
           </div>
-          <svg ref={svgRef} className="it-svg" role="img" aria-label={t('intertext.title')} />
+          {view === 'graph' ? (
+            <svg ref={svgRef} className="it-svg" role="img" aria-label={t('intertext.title')} />
+          ) : (
+            <Dendrogram works={works} edges={edgesAll} selected={selected} onSelect={setSelected} />
+          )}
         </div>
 
         <aside className="it-detail card">
@@ -228,7 +240,7 @@ export default function IntertextView() {
             <div className="it-placeholder">
               <p className="section-eyebrow">{t('corpus.colTitle')}</p>
               <p className="muted">{t('intertext.selectHint')}.</p>
-              <Gloss eyebrow={t('pano.methodTitle')} lang={lang}>{t('intertext.note')}</Gloss>
+              <Gloss eyebrow={t('pano.methodTitle')} lang={lang}>{view === 'tree' ? t('intertext.treeNote') : t('intertext.note')}</Gloss>
             </div>
           )}
         </aside>

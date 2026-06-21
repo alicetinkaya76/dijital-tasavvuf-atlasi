@@ -353,12 +353,12 @@ tr { cursor: pointer; }
 .it-layout { display: grid; grid-template-columns: 1fr 330px; gap: var(--sp-4); align-items: start; margin-top: var(--sp-4); }
 .it-graph-wrap { position: relative; padding: var(--sp-2); min-height: 480px; }
 .it-toolbar {
-  position: absolute; inset-inline-start: var(--sp-3); top: var(--sp-3); z-index: 2;
-  display: flex; flex-direction: column; gap: var(--sp-2);
-  background: color-mix(in srgb, var(--card) 88%, transparent);
-  padding: var(--sp-2) var(--sp-3); border: 1px solid var(--line); border-radius: var(--radius);
-  max-width: 62%;
+  display: flex; align-items: center; gap: var(--sp-4); flex-wrap: wrap;
+  padding: var(--sp-2) var(--sp-3); margin: calc(-1 * var(--sp-2)) calc(-1 * var(--sp-2)) var(--sp-2);
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
 }
+.it-viewtoggle { flex: 0 0 auto; }
 .it-threshold { display: flex; align-items: center; gap: var(--sp-2); }
 .it-threshold input[type='range'] { flex: 1; min-width: 90px; accent-color: var(--gold); }
 .it-threshold-val { font-size: var(--fs-sm); font-weight: 700; color: var(--gold); min-width: 3ch; }
@@ -433,3 +433,11 @@ tr { cursor: pointer; }
   .diverge-row { grid-template-columns: 1fr 2fr 3ch; }
   .tornado-label { font-size: var(--fs-xs); }
 }
+
+/* ════════ dendrogram (Round 2) ════════ */
+.dendro { width: 100%; }
+.dendro-toolbar { display: flex; align-items: center; gap: var(--sp-2); padding: var(--sp-3) var(--sp-1) var(--sp-2); }
+.dendro-svg { width: 100%; height: auto; display: block; }
+.dendro-leaf text { transition: fill 0.12s; }
+.dendro-leaf:hover text { fill: var(--gold); }
+.dendro-leaf:hover circle { r: 5; }

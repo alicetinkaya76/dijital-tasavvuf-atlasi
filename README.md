@@ -15,10 +15,10 @@ An interactive, multilingual research atlas of the classical Sufi textual tradit
 | I | **Pano** / Overview | Külliyatın genel görünümü, yöntem ve sınır notu |
 | II | **Harita** / Map | Müelliflerin coğrafyası; Bağdat–Nîşâbur–Konya ekseni (Leaflet) |
 | III | **Zaman Çizelgesi** / Timeline | 22 eserin ölçekli kronolojisi, kavram vurgusu |
-| IV | **Kavram Madenciliği** / Concept Mining | Dağılım çubukları · ortak-geçiş ağı (D3) · kavram×yüzyıl ısı haritası · nesiller arası akış |
+| IV | **Kavram Madenciliği** / Concept Mining | Dağılım · ayırt edicilik (log₂) · eser karşılaştırması · ortak-geçiş ağı (D3) · ısı haritası · nesiller arası akış |
 | V | **Silsile Ağı** / Transmission | Hoca–talebe ve metinsel etki ağı (D3) |
 | VI | **Külliyat Tarayıcı** / Corpus Browser | Sıralanabilir künye tablosu · TR/AR/FA toleranslı tam-metin arama (MiniSearch) |
-| VII | **Metinler Arası** / Intertextual Web | Eserler arası paylaşılan ayırt edici söz dağarı; yakınlık, dile göre kümelenme, merkezilik (D3) |
+| VII | **Metinler Arası** / Intertextual Web | Paylaşılan söz dağarı ağı + hiyerarşik kümeleme soy ağacı (dendrogram); yakınlık, merkezilik, dile göre kümelenme (D3) |
 | VIII | **AI Rehber** / AI Guide | 22 metne dayalı RAG sohbeti; manevî hüküm vermez |
 
 Her kavramın bir **zâhir / bâtın notu** vardır: ne sayıldığı ve sayımdan ne kaçtığı, bir kenar hâşiyesi (gloss) olarak gösterilir.

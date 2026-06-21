@@ -393,3 +393,43 @@ tr { cursor: pointer; }
   .it-detail { position: static; }
   .it-toolbar { max-width: none; position: static; margin-bottom: var(--sp-2); }
 }
+
+/* ════════ concept distinctiveness + comparison (Round 1) ════════ */
+.cx-dist-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); margin-top: var(--sp-4); margin-bottom: var(--sp-2); flex-wrap: wrap; }
+.mode-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.mode-btn { font-size: var(--fs-xs); font-weight: 600; padding: 0.3em 0.85em; background: var(--paper2); color: var(--muted); border: 0; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.mode-btn.active { background: var(--ink); color: var(--paper2); }
+
+/* diverging (distinctiveness) bars */
+.diverge-axis { display: flex; justify-content: space-between; font-size: var(--fs-xs); font-weight: 600; margin-bottom: var(--sp-2); padding: 0 calc(3.5ch + var(--sp-3)); }
+.diverge-cap.under { color: var(--lapis); }
+.diverge-cap.over { color: var(--madder); }
+.diverge-bars { display: flex; flex-direction: column; gap: var(--sp-2); }
+.diverge-row { display: grid; grid-template-columns: minmax(110px, 1.3fr) 3fr 3.5ch; gap: var(--sp-3); align-items: center; }
+.diverge-label { display: flex; flex-direction: column; min-width: 0; }
+.diverge-track { position: relative; height: 13px; background: var(--card-2); border-radius: 4px; }
+.diverge-center { position: absolute; inset-inline-start: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--line); }
+.diverge-fill { position: absolute; top: 0; height: 100%; border-radius: 3px; transition: width 0.4s ease; }
+.diverge-val { font-size: var(--fs-xs); font-weight: 700; text-align: end; }
+
+/* two-work comparison */
+.cx-compare .section-hint { margin: 0 0 var(--sp-3); }
+.compare-selectors { display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; margin-bottom: var(--sp-4); }
+.compare-sel { display: inline-flex; align-items: center; gap: var(--sp-2); flex: 1; min-width: 200px; }
+.compare-sel .select { flex: 1; min-width: 0; }
+.compare-dot { width: 11px; height: 11px; border-radius: 50%; flex: 0 0 auto; }
+.compare-vs { font-size: 1.1rem; color: var(--muted); flex: 0 0 auto; }
+.tornado { display: flex; flex-direction: column; gap: var(--sp-2); }
+.tornado-head { display: flex; align-items: center; justify-content: center; gap: 0.5em; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-sm); text-align: center; margin-bottom: var(--sp-2); flex-wrap: wrap; }
+.tornado-row { display: grid; grid-template-columns: 1fr minmax(72px, auto) 1fr; align-items: center; gap: var(--sp-2); }
+.tornado-label { text-align: center; font-size: var(--fs-sm); font-weight: 600; white-space: nowrap; }
+.tornado-side { display: flex; align-items: center; gap: var(--sp-1); }
+.tornado-side.left { justify-content: flex-end; }
+.tornado-side.right { justify-content: flex-start; }
+.tornado-bar { height: 12px; border-radius: 3px; display: block; transition: width 0.4s ease; }
+.tornado-num { font-size: var(--fs-xs); color: var(--muted); min-width: 2.6ch; }
+
+@media (max-width: 560px) {
+  .diverge-row { grid-template-columns: 1fr 2fr 3ch; }
+  .tornado-label { font-size: var(--fs-xs); }
+}
